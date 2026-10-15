@@ -3,15 +3,9 @@ name: Fetch site images
 # them to the branch the workflow was dispatched on. Used because the Claude
 # cloud container cannot reach the image CDN directly.
 on:
-  workflow_dispatch:
-    inputs:
-      manifest:
-        description: 'JSON array of {"name": "file-basename", "url": "https://...", "width": 1600}'
-        required: true
-      dest:
-        description: Destination directory (repo-relative)
-        required: true
-        default: sites/bheki-steelworks/images
+  push:
+    paths:
+      - 'sites/*/images/manifest.json'
 
 permissions:
   contents: write
@@ -22,11 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download and convert
-        env:
-          MANIFEST: ${{ inputs.manifest }}
-          DEST: ${{ inputs.dest }}
         run: |
           set -euo pipefail
+          MANIFEST_FILE=$(git diff-tree --no-commit-id --name-only -r HEAD | grep -E '^sites/[^/]+/images/manifest.json$' | head -1)
+          if [ -z "$MANIFEST_FILE" ]; then echo "no manifest in this commit"; exit 0; fi
+          DEST=$(dirname "$MANIFEST_FILE")
+          MANIFEST=$(cat "$MANIFEST_FILE")
+          echo "DEST=$DEST" >> "$GITHUB_ENV"
           sudo apt-get update -qq && sudo apt-get install -y -qq webp jq >/dev/null
           mkdir -p "$DEST" tmp_dl
           echo "$MANIFEST" | jq -c '.[]' | while read -r item; do
@@ -40,8 +36,7 @@ jobs:
           done
           rm -rf tmp_dl
       - name: Commit
-        env:
-          DEST: ${{ inputs.dest }}
+        if: env.DEST != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

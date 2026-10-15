@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bheki Ndlovu Steelworks</title>
+<meta name="description" content="Custom steel gates, burglar bars, palisade fencing and steel repairs, made to measure and finished properly by Bheki Ndlovu. Free quotes, fast response.">
+<meta property="og:title" content="Bheki Ndlovu Steelworks">
+<meta property="og:description" content="Custom steel gates, burglar bars and fencing, made to measure and finished properly.">
+<meta property="og:image" content="images/hero-welding.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   CONTACT DETAILS: edit the data-* attributes on <body> below. Every
+   phone, WhatsApp and email link on the page reads from them.
+   ------------------------------------------------------------------ */
+
+/* Layout: dark forge-steel ground, one hot accent, condensed display type.
+   Full-bleed photography carries the page; copy stays short. */
+:root {
+  --bg: #16181b;          /* blued steel */
+  --bg-2: #1f2226;        /* raised panel */
+  --bg-3: #2a2e33;        /* rule / hairline */
+  --fg: #f1efe9;          /* warm white */
+  --fg-2: #b7b4ab;        /* muted */
+  --accent: #ff7a1a;      /* spark orange */
+  --accent-2: #ffb15c;    /* hot edge */
+  --wa: #25d366;          /* WhatsApp green */
+  --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --gutter: max(18px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(18px, env(safe-area-inset-right, 0px));
+  --max: 1180px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); line-height: 1; margin: 0; text-wrap: balance; letter-spacing: .005em; }
+h1 { font-weight: 800; font-size: clamp(2.9rem, 8vw, 5.6rem); text-transform: uppercase; }
+h2 { font-weight: 800; font-size: clamp(2.2rem, 5.2vw, 3.6rem); text-transform: uppercase; }
+h3 { font-weight: 700; font-size: 1.5rem; }
+p { margin: 0; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
+.eyebrow { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: .85rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--accent); }
+.lede { color: var(--fg-2); font-size: 1.1rem; max-width: 60ch; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 1.1rem;
+  padding: 14px 22px; border-radius: 4px; text-decoration: none; border: 2px solid transparent; cursor: pointer; white-space: nowrap;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+.btn-primary { background: var(--accent); color: #140b03; }
+.btn-primary:hover { background: var(--accent-2); }
+.btn-wa { background: var(--wa); color: #06220f; }
+.btn-wa:hover { background: #3ee07d; }
+.btn-ghost { border-color: var(--fg-2); color: var(--fg); background: transparent; }
+.btn-ghost:hover { border-color: var(--fg); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* NAV */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(22,24,27,.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--bg-3); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 72%, 72% 100%, 0 100%); display: grid; place-items: center; color: #140b03; font-family: var(--display); font-weight: 800; font-size: 1.25rem; }
+.brand-name { font-family: var(--display); font-weight: 700; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .04em; line-height: 1; }
+.brand-name small { display: block; font-family: var(--body); font-weight: 500; text-transform: none; letter-spacing: 0; font-size: .74rem; color: var(--fg-2); margin-top: 3px; }
+.nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; font-weight: 500; color: var(--fg-2); font-size: .95rem; }
+.nav-links a:hover { color: var(--fg); }
+.nav .btn { padding: 10px 16px; font-size: 1rem; }
+@media (max-width: 860px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero { position: relative; isolation: isolate; min-height: 560px; display: grid; align-items: end; overflow: hidden; }
+.hero-img { position: absolute; inset: 0; z-index: -2; }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(22,24,27,.15) 0%, rgba(22,24,27,.55) 55%, var(--bg) 100%), linear-gradient(90deg, rgba(22,24,27,.55) 0%, rgba(22,24,27,0) 60%); }
+.hero .wrap { padding-block: 120px 56px; width: 100%; }
+.hero h1 { max-width: 12ch; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { margin-top: 18px; font-size: 1.2rem; color: var(--fg); max-width: 50ch; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-note { margin-top: 18px; color: var(--fg-2); font-size: .95rem; }
+@media (max-width: 600px) { .hero { min-height: 78svh; } .hero .wrap { padding-block: 90px 40px; } .hero-cta .btn { flex: 1 1 100%; } }
+
+/* TRUST STRIP */
+.strip { background: var(--bg-2); border-top: 1px solid var(--bg-3); border-bottom: 1px solid var(--bg-3); }
+.strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.strip-item { padding: 22px 18px 22px 0; display: flex; gap: 14px; align-items: flex-start; border-left: 1px solid var(--bg-3); padding-left: 18px; }
+.strip-item:first-child { border-left: 0; padding-left: 0; }
+.strip-item svg { width: 28px; height: 28px; flex: none; color: var(--accent); }
+.strip-item b { font-family: var(--display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; letter-spacing: .04em; display: block; }
+.strip-item span { color: var(--fg-2); font-size: .92rem; }
+@media (max-width: 860px) { .strip .wrap { grid-template-columns: 1fr 1fr; } .strip-item:nth-child(3) { border-left: 0; padding-left: 0; } .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--bg-3); } }
+@media (max-width: 480px) { .strip .wrap { grid-template-columns: 1fr; } .strip-item { border-left: 0; padding-left: 0; border-bottom: 1px solid var(--bg-3); } .strip-item:last-child { border-bottom: 0; } }
+
+/* SECTIONS */
+.section { padding-block: 84px; }
+.section-head { display: grid; gap: 14px; max-width: 760px; margin-bottom: 40px; }
+@media (max-width: 600px) { .section { padding-block: 60px; } }
+
+/* SERVICES */
+.services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.service { position: relative; background: var(--bg-2); border: 1px solid var(--bg-3); overflow: hidden; display: grid; grid-template-rows: auto 1fr; text-decoration: none; }
+.service figure { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; }
+.service img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.service:hover img { transform: scale(1.04); }
+.service-body { padding: 22px 24px 26px; display: grid; gap: 10px; align-content: start; }
+.service-body h3 { text-transform: uppercase; font-size: 1.6rem; }
+.service-body p { color: var(--fg-2); }
+.service-body ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.service-body li { font-size: .82rem; font-weight: 500; padding: 4px 10px; border: 1px solid var(--bg-3); border-radius: 999px; color: var(--fg-2); }
+.service-body .more { color: var(--accent); font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+@media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+
+/* PROCESS */
+.process-bg { background: var(--bg-2); border-top: 1px solid var(--bg-3); border-bottom: 1px solid var(--bg-3); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+.step { display: grid; gap: 12px; align-content: start; }
+.step figure { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; border: 1px solid var(--bg-3); }
+.step img { width: 100%; height: 100%; object-fit: cover; }
+.step-num { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent); }
+.step h3 { text-transform: uppercase; }
+.step p { color: var(--fg-2); font-size: .98rem; }
+@media (max-width: 960px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+/* ABOUT */
+.about { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: center; }
+.about figure { margin: 0; position: relative; max-width: 100%; }
+.about figure img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.about figure::after { content: ""; position: absolute; inset: auto -14px -14px auto; width: 60%; height: 50%; border: 3px solid var(--accent); z-index: -1; }
+.about-copy { display: grid; gap: 18px; }
+.about-copy p { max-width: 58ch; }
+.about-copy .quote { font-family: var(--display); font-weight: 600; font-size: 1.6rem; line-height: 1.15; color: var(--fg); border-left: 4px solid var(--accent); padding-left: 18px; }
+.facts { display: grid; grid-template-columns: repeat(3, auto); gap: 24px; margin-top: 8px; }
+.facts div b { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; display: block; color: var(--accent-2); }
+.facts div span { font-size: .9rem; color: var(--fg-2); }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 36px; } .about figure { max-width: 440px; } }
+
+/* GALLERY */
+.gallery { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 180px; gap: 10px; }
+.gallery figure { margin: 0; position: relative; overflow: hidden; max-width: 100%; background: var(--bg-2); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.gallery figure:hover img { transform: scale(1.04); }
+.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 12px; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; font-size: .95rem; background: linear-gradient(180deg, transparent, rgba(0,0,0,.75)); }
+.g-wide { grid-column: span 4; grid-row: span 2; }
+.g-tall { grid-column: span 2; grid-row: span 2; }
+.g-std { grid-column: span 2; }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; } .g-wide { grid-column: span 2; } .g-tall { grid-column: span 1; } .g-std { grid-column: span 1; } }
+
+/* TESTIMONIALS */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.quote-card { background: var(--bg-2); border: 1px solid var(--bg-3); padding: 26px; display: grid; gap: 14px; align-content: start; border-top: 3px solid var(--accent); }
+.quote-card p { font-size: 1.02rem; }
+.quote-card footer { font-size: .9rem; color: var(--fg-2); }
+.quote-card footer b { color: var(--fg); font-weight: 600; }
+.stars { color: var(--accent-2); letter-spacing: 2px; font-size: 1rem; }
+.placeholder-note { font-size: .85rem; color: var(--accent-2); border: 1px dashed var(--accent); padding: 8px 12px; display: inline-block; margin-top: 18px; }
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+
+/* QUOTE FORM */
+.quote-bg { background: var(--bg-2); border-top: 1px solid var(--bg-3); }
+.quote-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+.contact-list { display: grid; gap: 16px; margin-top: 10px; }
+.contact-item { display: flex; gap: 14px; align-items: flex-start; }
+.contact-item svg { width: 24px; height: 24px; flex: none; color: var(--accent); margin-top: 2px; }
+.contact-item b { font-family: var(--display); text-transform: uppercase; letter-spacing: .06em; font-size: .9rem; color: var(--fg-2); display: block; }
+.contact-item a, .contact-item span.v { font-size: 1.15rem; font-weight: 600; text-decoration: none; }
+.contact-item a:hover { color: var(--accent-2); }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+label { font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; font-weight: 700; color: var(--fg-2); }
+input, select, textarea { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--bg-3); border-radius: 4px; padding: 12px 14px; font: inherit; font-size: 1rem; }
+input::placeholder, textarea::placeholder { color: #6f6d66; }
+textarea { min-height: 120px; resize: vertical; }
+.form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.form-hint { grid-column: 1 / -1; font-size: .88rem; color: var(--fg-2); }
+.form-ok { grid-column: 1 / -1; background: rgba(37,211,102,.12); border: 1px solid var(--wa); padding: 14px 16px; border-radius: 4px; }
+@media (max-width: 860px) { .quote-grid { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 560px) { form { grid-template-columns: 1fr; } .form-actions .btn { flex: 1 1 100%; } }
+
+/* FOOTER */
+footer.site { padding-block: 32px; border-top: 1px solid var(--bg-3); color: var(--fg-2); font-size: .9rem; }
+footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* STICKY WHATSAPP */
+.fab { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #06220f; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.45); text-decoration: none; }
+.fab svg { width: 32px; height: 32px; }
+.fab:hover { transform: scale(1.06); }
+</style>
+</head>
+<body
+  data-name="Bheki Ndlovu"
+  data-phone="+27 00 000 0000"
+  data-whatsapp="27000000000"
+  data-email="bheki@example.co.za"
+  data-area="Gauteng">
+<!-- TODO before launch: replace the data-phone, data-whatsapp (digits only, country code, no +),
+     data-email and data-area values on <body>. Everything on the page reads from them. -->
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bheki Ndlovu Steelworks, home">
+      <span class="brand-mark" aria-hidden="true">BN</span>
+      <span class="brand-name">Bheki Ndlovu <small>Custom steel fabrication</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#about">About Bheki</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#quote">Get a quote</a></li>
+    </ul>
+    <a class="btn btn-primary js-tel" href="#quote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg>
+      <span>Call Bheki</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-img"><img src="images/hero-welding.webp" alt="Bheki Ndlovu welding the frame of a custom steel gate in his workshop" fetchpriority="high"></div>
+    <div class="wrap">
+      <p class="eyebrow">Gates · Burglar bars · Fencing · Steel repairs</p>
+      <h1>Steel made <em>to measure.</em> Finished <em>properly.</em></h1>
+      <p class="lede">Bheki Ndlovu fabricates and installs custom gates, burglar bars and palisade fencing for homes and small businesses. Every weld ground smooth, every line square, every job finished the way you'd finish it yourself.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa js-wa" href="#quote">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          <span>WhatsApp a quote</span>
+        </a>
+        <a class="btn btn-ghost js-tel" href="#quote">Call now</a>
+      </div>
+      <p class="hero-note">Free site visit and quote · <span class="js-area">Gauteng</span> and surrounds · Available 7 days</p>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Why customers choose Bheki">
+    <div class="wrap">
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21 14 10"/><path d="m9 4 1 1-5 5-1-1z"/><path d="M14 4l6 6"/><path d="m17 3 4 4-2 2-4-4z"/><path d="m5 19 2 2"/></svg>
+        <div><b>Made to measure</b><span>Fabricated for your opening, not cut down from stock.</span></div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        <div><b>Finished properly</b><span>Welds ground flush, primed and painted. No sharp edges, no drips.</span></div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><b>Available when you need him</b><span>Answers his phone. Comes out after hours and weekends.</span></div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+        <div><b>Free, fixed quotes</b><span>Measured on site, priced in writing, no surprises on the invoice.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What we make</p>
+        <h2>Custom steelwork for your home or business</h2>
+        <p class="lede">Every job starts with a site measurement and a drawing. Pick the style, Bheki builds it.</p>
+      </div>
+      <div class="services">
+        <a class="service" href="#quote">
+          <figure><img src="images/work-driveway-gate.webp" alt="Modern black slatted steel driveway gate with laser-cut panel" loading="lazy"></figure>
+          <div class="service-body">
+            <h3>Driveway &amp; pedestrian gates</h3>
+            <p>Sliding, swing and pedestrian gates in square tube, slat, palisade or wrought styles. Built square so they run true on the track for years, and ready for motor fitment.</p>
+            <ul><li>Sliding gates</li><li>Swing gates</li><li>Pedestrian gates</li><li>Motor-ready</li><li>Repairs &amp; re-hangs</li></ul>
+            <span class="more">Get a gate quote →</span>
+          </div>
+        </a>
+        <a class="service" href="#quote">
+          <figure><img src="images/work-burglar-bars.webp" alt="Custom black steel burglar bars with a geometric design on a window" loading="lazy"></figure>
+          <div class="service-body">
+            <h3>Burglar bars &amp; security doors</h3>
+            <p>Made for each window so they sit flush and look like part of the house. Plain, patterned or Spanish bars, plus security gates for front and patio doors.</p>
+            <ul><li>Window bars</li><li>Security gates</li><li>Patio doors</li><li>Cottage pane</li><li>Powder-coat or enamel</li></ul>
+            <span class="more">Get a burglar bar quote →</span>
+          </div>
+        </a>
+        <a class="service" href="#quote">
+          <figure><img src="images/work-palisade.webp" alt="Long run of black spear-top palisade fencing with a matching sliding gate" loading="lazy"></figure>
+          <div class="service-body">
+            <h3>Palisade &amp; perimeter fencing</h3>
+            <p>Spear-top palisade, devil's fork, clearview-style panel and steel-post fencing. Straight runs, even spacing, properly footed posts.</p>
+            <ul><li>Palisade</li><li>Devil's fork</li><li>Panel fencing</li><li>Fence repairs</li><li>Matching gates</li></ul>
+            <span class="more">Get a fencing quote →</span>
+          </div>
+        </a>
+        <a class="service" href="#quote">
+          <figure><img src="images/work-security-door.webp" alt="Satin black steel security door and matching staircase balustrade" loading="lazy"></figure>
+          <div class="service-body">
+            <h3>Balustrades, repairs &amp; handyman steelwork</h3>
+            <p>Staircase and balcony balustrades, carports, braai stands, brackets, and repairs to anything steel that has bent, rusted or broken. If it needs welding, call Bheki.</p>
+            <ul><li>Balustrades</li><li>Carports</li><li>Braai &amp; fire pits</li><li>Rust repairs</li><li>General handyman</li></ul>
+            <span class="more">Describe your job →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-bg section" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How we work</p>
+        <h2>Measured twice. Welded once. Finished like it matters.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <figure><img src="images/measuring.webp" alt="Bheki measuring and marking square steel tubing on his workbench" loading="lazy"></figure>
+          <span class="step-num">1</span>
+          <h3>Measure &amp; quote</h3>
+          <p>Bheki comes to you, measures the opening, talks through styles and sends a written quote. Usually same day.</p>
+        </div>
+        <div class="step">
+          <figure><img src="images/grinding.webp" alt="Bheki grinding a weld seam smooth on a steel gate frame" loading="lazy"></figure>
+          <span class="step-num">2</span>
+          <h3>Fabricate</h3>
+          <p>Cut, squared, jigged and welded in the workshop. Every seam ground flush before it goes anywhere near paint.</p>
+        </div>
+        <div class="step">
+          <figure><img src="images/painting-palisade.webp" alt="Bheki spraying a final black coat on a palisade fence panel" loading="lazy"></figure>
+          <span class="step-num">3</span>
+          <h3>Finish</h3>
+          <p>De-greased, primed and painted or powder-coated. The finish is what you look at every day, so it gets the time it needs.</p>
+        </div>
+        <div class="step">
+          <figure><img src="images/install-gate.webp" alt="Bheki checking a newly installed sliding gate with a spirit level" loading="lazy"></figure>
+          <span class="step-num">4</span>
+          <h3>Install &amp; hand over</h3>
+          <p>Fitted level, tested, site cleaned. You get the keys and Bheki's number. If anything needs adjusting, he comes back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about">
+      <figure><img src="images/portrait-workshop.webp" alt="Bheki Ndlovu standing in his workshop in front of a finished steel gate" loading="lazy"></figure>
+      <div class="about-copy">
+        <p class="eyebrow">About Bheki</p>
+        <h2>The man who answers the phone is the man who does the work</h2>
+        <p class="quote">"If I wouldn't put it on my own house, it doesn't leave my workshop."</p>
+        <p>Bheki Ndlovu is a steel fabricator and handyman who has built his reputation one gate at a time. He is particular about the things most people only notice when they're wrong: a gate that drags, a bar that sits crooked, a weld that was painted over instead of ground.</p>
+        <p>He works hard, keeps his word on dates, and makes himself available when customers need him. No call centre, no sub-contractors you've never met. You deal with Bheki from the first measurement to the last coat of paint.</p>
+        <div class="facts">
+          <div><b>1</b><span>person accountable, start to finish</span></div>
+          <div><b>7</b><span>days a week on call</span></div>
+          <div><b>100%</b><span>custom made, nothing off the shelf</span></div>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary js-tel" href="#quote">Call Bheki</a>
+          <a class="btn btn-ghost js-wa" href="#quote">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Recent work</p>
+        <h2>Built in the workshop. Proven on site.</h2>
+      </div>
+      <div class="gallery">
+        <figure class="g-wide"><img src="images/handover.webp" alt="Bheki handing over keys to a new steel pedestrian gate to happy homeowners" loading="lazy"><figcaption>Pedestrian gate handover</figcaption></figure>
+        <figure class="g-tall"><img src="images/install-burglar-bars.webp" alt="Bheki fitting custom burglar bars to a window" loading="lazy"><figcaption>Burglar bar fitment</figcaption></figure>
+        <figure class="g-std"><img src="images/work-driveway-gate.webp" alt="Slatted driveway gate" loading="lazy"><figcaption>Slat driveway gate</figcaption></figure>
+        <figure class="g-std"><img src="images/work-palisade.webp" alt="Palisade fencing" loading="lazy"><figcaption>Palisade fencing</figcaption></figure>
+        <figure class="g-std"><img src="images/work-security-door.webp" alt="Security door and balustrade" loading="lazy"><figcaption>Security door &amp; balustrade</figcaption></figure>
+        <figure class="g-std"><img src="images/grinding.webp" alt="Grinding a weld" loading="lazy"><figcaption>Welds ground flush</figcaption></figure>
+        <figure class="g-std"><img src="images/work-burglar-bars.webp" alt="Patterned burglar bars" loading="lazy"><figcaption>Patterned burglar bars</figcaption></figure>
+        <figure class="g-std"><img src="images/install-gate.webp" alt="Installing a sliding gate" loading="lazy"><figcaption>Sliding gate install</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-bg" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What customers say</p>
+        <h2>Word of mouth is how Bheki gets most of his work</h2>
+      </div>
+      <div class="quotes">
+        <div class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>[Customer quote to be supplied. Example of the kind of thing we want here: "Bheki measured on Tuesday, the gate was in by Saturday and it runs like it's on rails."]</p>
+          <footer><b>[Customer name]</b> · [Suburb]</footer>
+        </div>
+        <div class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>[Customer quote to be supplied. Ideally one about the finish and attention to detail.]</p>
+          <footer><b>[Customer name]</b> · [Suburb]</footer>
+        </div>
+        <div class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>[Customer quote to be supplied. Ideally one about him coming out after hours or at short notice.]</p>
+          <footer><b>[Customer name]</b> · [Suburb]</footer>
+        </div>
+      </div>
+      <p class="placeholder-note">Placeholder: swap for three real customer quotes before launch. Remove this section if none are available yet.</p>
+    </div>
+  </section>
+
+  <section class="section quote-bg" id="quote">
+    <div class="wrap quote-grid">
+      <div>
+        <p class="eyebrow">Get a quote</p>
+        <h2>Tell Bheki what you need</h2>
+        <p class="lede" style="margin-top:14px">Send a few details and a photo of the opening if you have one. Bheki replies the same day, usually within the hour.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg>
+            <div><b>Call or WhatsApp</b><a class="js-tel js-phone-text" href="#quote">+27 00 000 0000</a></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            <div><b>Email</b><a class="js-mail js-email-text" href="#quote">bheki@example.co.za</a></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Service area</b><span class="v js-area">Gauteng</span><br><span style="color:var(--fg-2);font-size:.9rem">and surrounding areas. Ask if you're further out.</span></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div><b>Hours</b><span class="v">Mon to Sun, 07:00 to 19:00</span><br><span style="color:var(--fg-2);font-size:.9rem">Emergencies after hours: call, he'll answer.</span></div>
+          </div>
+        </div>
+      </div>
+      <form id="quote-form" novalidate>
+        <div class="field">
+          <label for="q-name">Your name</label>
+          <input id="q-name" name="name" type="text" autocomplete="name" required placeholder="Thandi M.">
+        </div>
+        <div class="field">
+          <label for="q-phone">Phone / WhatsApp</label>
+          <input id="q-phone" name="phone" type="tel" autocomplete="tel" required placeholder="082 000 0000">
+        </div>
+        <div class="field">
+          <label for="q-suburb">Suburb</label>
+          <input id="q-suburb" name="suburb" type="text" placeholder="e.g. Roodepoort">
+        </div>
+        <div class="field">
+          <label for="q-type">What do you need?</label>
+          <select id="q-type" name="type">
+            <option>Driveway gate</option>
+            <option>Pedestrian gate</option>
+            <option>Burglar bars</option>
+            <option>Security door / gate</option>
+            <option>Palisade or fencing</option>
+            <option>Balustrade</option>
+            <option>Repair</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="q-msg">Details</label>
+          <textarea id="q-msg" name="message" placeholder="Rough size, style you like, when you need it done. Photos help: you can send them on WhatsApp after you submit."></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-wa" type="submit" id="q-send-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            <span>Send on WhatsApp</span>
+          </button>
+          <button class="btn btn-ghost" type="button" id="q-send-mail">Send by email instead</button>
+        </div>
+        <p class="form-hint">Submitting opens WhatsApp (or your email app) with your message filled in. Nothing is stored on this site.</p>
+        <p class="form-ok" id="q-ok" hidden>Thanks. WhatsApp should have opened with your message. If it didn't, call <a class="js-tel js-phone-text" href="#quote">+27 00 000 0000</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Bheki Ndlovu Steelworks · Custom steel fabrication · <span class="js-area">Gauteng</span></span>
+    <span><a class="js-tel js-phone-text" href="#quote">+27 00 000 0000</a> · <a class="js-mail js-email-text" href="#quote">bheki@example.co.za</a></span>
+  </div>
+</footer>
+
+<a class="fab js-wa" href="#quote" aria-label="WhatsApp Bheki">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<script>
+(function () {
+  var d = document.body.dataset;
+  var phone = d.phone, wa = d.whatsapp, email = d.email, area = d.area;
+  var telHref = 'tel:' + phone.replace(/[^+\d]/g, '');
+  var waHref = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Hi Bheki, I would like a quote for ');
+  var mailHref = 'mailto:' + email + '?subject=' + encodeURIComponent('Quote request');
+
+  document.querySelectorAll('.js-tel').forEach(function (a) { a.href = telHref; });
+  document.querySelectorAll('.js-wa').forEach(function (a) { a.href = waHref; a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('.js-mail').forEach(function (a) { a.href = mailHref; });
+  document.querySelectorAll('.js-phone-text').forEach(function (a) { a.textContent = phone; });
+  document.querySelectorAll('.js-email-text').forEach(function (a) { a.textContent = email; });
+  document.querySelectorAll('.js-area').forEach(function (a) { a.textContent = area; });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('quote-form');
+  function compose() {
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    if (!v('q-name') || !v('q-phone')) {
+      (v('q-name') ? document.getElementById('q-phone') : document.getElementById('q-name')).focus();
+      return null;
+    }
+    return 'Hi Bheki, I would like a quote.\n' +
+      'Name: ' + v('q-name') + '\n' +
+      'Phone: ' + v('q-phone') + '\n' +
+      (v('q-suburb') ? 'Suburb: ' + v('q-suburb') + '\n' : '') +
+      'Job: ' + v('q-type') + '\n' +
+      (v('q-msg') ? 'Details: ' + v('q-msg') : '');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = compose(); if (!msg) return;
+    window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    document.getElementById('q-ok').hidden = false;
+  });
+  document.getElementById('q-send-mail').addEventListener('click', function () {
+    var msg = compose(); if (!msg) return;
+    window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Quote request from ' + document.getElementById('q-name').value) + '&body=' + encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
