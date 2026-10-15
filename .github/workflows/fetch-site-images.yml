@@ -1,0 +1,50 @@
+name: Fetch site images
+# Downloads generated images by URL, converts them to web-ready WebP and commits
+# them to the branch the workflow was dispatched on. Used because the Claude
+# cloud container cannot reach the image CDN directly.
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: 'JSON array of {"name": "file-basename", "url": "https://...", "width": 1600}'
+        required: true
+      dest:
+        description: Destination directory (repo-relative)
+        required: true
+        default: sites/bheki-steelworks/images
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and convert
+        env:
+          MANIFEST: ${{ inputs.manifest }}
+          DEST: ${{ inputs.dest }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq webp jq >/dev/null
+          mkdir -p "$DEST" tmp_dl
+          echo "$MANIFEST" | jq -c '.[]' | while read -r item; do
+            name=$(echo "$item" | jq -r .name)
+            url=$(echo "$item" | jq -r .url)
+            width=$(echo "$item" | jq -r '.width // 1600')
+            curl -fsSL --retry 3 -o "tmp_dl/$name.png" "$url"
+            convert "tmp_dl/$name.png" -resize "${width}x>" -strip -quality 82 "$DEST/$name.webp"
+            convert "tmp_dl/$name.png" -resize "640x>" -strip -quality 70 "$DEST/preview-$name.jpg"
+            echo "$name: $(identify -format '%wx%h' "$DEST/$name.webp") $(du -h "$DEST/$name.webp" | cut -f1)"
+          done
+          rm -rf tmp_dl
+      - name: Commit
+        env:
+          DEST: ${{ inputs.dest }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DEST"
+          git commit -m "Add generated site images (fetched by workflow)" || echo "nothing to commit"
+          git push
