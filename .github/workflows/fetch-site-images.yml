@@ -1,7 +1,7 @@
 name: Fetch site images
-# Downloads generated images by URL, converts them to web-ready WebP and commits
-# them to the branch the workflow was dispatched on. Used because the Claude
-# cloud container cannot reach the image CDN directly.
+# On any push that changes a sites/*/images/manifest.json, downloads the listed
+# images, converts them to web-ready WebP and commits them to the same branch.
+# Exists because the Claude cloud container cannot reach the image CDN directly.
 on:
   push:
     paths:
@@ -18,28 +18,27 @@ jobs:
       - name: Download and convert
         run: |
           set -euo pipefail
-          MANIFEST_FILE=$(git diff-tree --no-commit-id --name-only -r HEAD | grep -E '^sites/[^/]+/images/manifest.json$' | head -1)
-          if [ -z "$MANIFEST_FILE" ]; then echo "no manifest in this commit"; exit 0; fi
-          DEST=$(dirname "$MANIFEST_FILE")
-          MANIFEST=$(cat "$MANIFEST_FILE")
-          echo "DEST=$DEST" >> "$GITHUB_ENV"
           sudo apt-get update -qq && sudo apt-get install -y -qq webp jq >/dev/null
-          mkdir -p "$DEST" tmp_dl
-          echo "$MANIFEST" | jq -c '.[]' | while read -r item; do
-            name=$(echo "$item" | jq -r .name)
-            url=$(echo "$item" | jq -r .url)
-            width=$(echo "$item" | jq -r '.width // 1600')
-            curl -fsSL --retry 3 -o "tmp_dl/$name.png" "$url"
-            convert "tmp_dl/$name.png" -resize "${width}x>" -strip -quality 82 "$DEST/$name.webp"
-            convert "tmp_dl/$name.png" -resize "640x>" -strip -quality 70 "$DEST/preview-$name.jpg"
-            echo "$name: $(identify -format '%wx%h' "$DEST/$name.webp") $(du -h "$DEST/$name.webp" | cut -f1)"
+          mkdir -p tmp_dl
+          for MANIFEST_FILE in sites/*/images/manifest.json; do
+            DEST=$(dirname "$MANIFEST_FILE")
+            echo "== $MANIFEST_FILE -> $DEST"
+            jq -c '.[]' "$MANIFEST_FILE" | while read -r item; do
+              name=$(echo "$item" | jq -r .name)
+              url=$(echo "$item" | jq -r .url)
+              width=$(echo "$item" | jq -r '.width // 1600')
+              if [ -f "$DEST/$name.webp" ]; then echo "$name: exists, skipping"; continue; fi
+              curl -fsSL --retry 3 -o "tmp_dl/$name.png" "$url"
+              convert "tmp_dl/$name.png" -resize "${width}x>" -strip -quality 82 "$DEST/$name.webp"
+              convert "tmp_dl/$name.png" -resize "640x>" -strip -quality 70 "$DEST/preview-$name.jpg"
+              echo "$name: $(identify -format '%wx%h' "$DEST/$name.webp") $(du -h "$DEST/$name.webp" | cut -f1)"
+            done
           done
           rm -rf tmp_dl
       - name: Commit
-        if: env.DEST != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$DEST"
+          git add sites/*/images
           git commit -m "Add generated site images (fetched by workflow)" || echo "nothing to commit"
           git push
